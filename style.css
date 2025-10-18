@@ -1,0 +1,102 @@
+body {
+  background-color: #000;
+  color: #bfbfbf;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  text-align: center;
+  padding: 100px 20px 60px 20px;
+  background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+}
+
+.logo {
+  max-width: 260px;
+  margin-bottom: 25px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #d50000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #bfbfbf !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d50000 !important;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.bg-dark {
+  background-color: #111 !important;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #111;
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.player audio {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #111;
+  border: 1px solid #333;
+  color: #bfbfbf;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d50000;
+  box-shadow: 0 0 5px rgba(213, 0, 0, 0.5);
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #d50000;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #ff1a1a;
+}
+
+::selection {
+  background-color: #d50000;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .player audio {
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Culto 94.1 - Radio en Vivo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-danger" href="#home">DE CULTO 94.1</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programacion">Programación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="text-center">
+    <img src="logo.png" alt="De Culto 94.1 Logo" class="logo">
+    <h1>Radio De Culto 94.1</h1>
+    <p>Modernizamos la radio para que vuelva a ser parte de tu día: música, cultura y energía 24/7.</p>
+    <div class="player">
+      <audio controls autoplay>
+        <source src="https://srv10.streamingradio.ar/8200/stream" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+  </header>
+
+  <section id="nosotros" class="text-center">
+    <div class="container">
+      <h2>Quiénes Somos</h2>
+      <p class="mt-4">Somos una radio joven de la ciudad, creada para acompañarte con música, cultura y actualidad. Buscamos conectar marcas con oyentes, y traer la radio al presente con una estética moderna y una programación fresca.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="text-center">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p class="mt-4">Dejanos tu mensaje o consulta y te responderemos a la brevedad.</p>
+      <form class="contact-form mt-4 mx-auto" style="max-width:600px">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Tu email" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger w-100">Enviar mensaje</button>
+      </form>
+      <div class="mt-4">
+        <p>📧 <a href="mailto:radiodeculto@gmail.com" class="text-danger">radiodeculto@gmail.com</a></p>
+        <p>📱 <a href="https://wa.me/5492346408404" class="text-danger" target="_blank">WhatsApp</a></p>
+        <p>📸 <a href="https://www.instagram.com/deculto94.1" class="text-danger" target="_blank">Instagram</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Radio De Culto 94.1 — Todos los derechos reservados
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
