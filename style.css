@@ -3,8 +3,12 @@ body {
   color: #bfbfbf;
   font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ----- HEADER ----- */
 header {
   text-align: center;
   padding: 100px 20px 60px 20px;
@@ -16,12 +20,14 @@ header {
   margin-bottom: 25px;
 }
 
+/* ----- TEXTOS ----- */
 h1, h2, h3, h4, h5 {
   color: #d50000;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* ----- NAV ----- */
 nav a {
   color: #bfbfbf !important;
   text-transform: uppercase;
@@ -33,70 +39,263 @@ nav a:hover {
   color: #d50000 !important;
 }
 
-section {
-  padding: 80px 20px;
-}
-
-.bg-dark {
-  background-color: #111 !important;
-}
-
+/* ----- FOOTER ----- */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   background-color: #111;
   color: #666;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 
+/* ==============================
+   MAIN CENTRAL — Reproductor
+============================== */
+#main {
+  background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px; /* compensa navbar fixed */
+  text-align: center;
+}
+
+#main .container {
+  max-width: 900px;
+}
+
+/* PLAYER */
+.player {
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.player img {
+  width: 260px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+.player .info p {
+  color: #ccc;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* REPRODUCTOR */
 .player audio {
   width: 100%;
-  max-width: 480px;
-  margin-top: 20px;
+  max-width: 600px;
   border-radius: 10px;
   outline: none;
 }
 
-.contact-form input,
-.contact-form textarea {
-  background-color: #111;
-  border: 1px solid #333;
-  color: #bfbfbf;
+/* PLYR ESTILO */
+.plyr {
+  --plyr-color-main: #d50000;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #d50000;
-  box-shadow: 0 0 5px rgba(213, 0, 0, 0.5);
-  color: #fff;
+.plyr__controls {
+  background: #111;
+  border-radius: 0 0 10px 10px;
 }
 
-.btn-danger {
-  background-color: #d50000;
-  border: none;
+/* ==============================
+   AUSPICIANTES (opcional estático)
+============================== */
+.sponsors {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.sponsors img {
+  height: 100px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.sponsors img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ==============================
+   CONTACTO MODERNO
+============================== */
+#contacto {
+  background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+  padding: 100px 20px;
+}
+
+#contacto h2 {
+  font-size: 2rem;
   text-transform: uppercase;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
 }
 
-.btn-danger:hover {
-  background-color: #ff1a1a;
+#contacto p {
+  color: #aaa;
 }
 
-::selection {
-  background-color: #d50000;
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #bfbfbf;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item i {
+  font-size: 1.8rem;
+  color: #d50000;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
   color: #fff;
+  transform: translateY(-3px);
 }
 
+.contact-item:hover i {
+  transform: scale(1.2);
+  color: #ff1a1a;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
 @media (max-width: 768px) {
-  header {
-    padding: 60px 20px;
+  #main {
+    padding: 120px 20px;
   }
-  h1 {
-    font-size: 1.8rem;
+
+  .player {
+    padding: 40px 25px;
   }
+
+  .player img {
+    width: 180px;
+  }
+
+  .player .info p {
+    font-size: 1rem;
+  }
+
   .player audio {
-    width: 100%;
+    max-width: 100%;
+  }
+
+  .sponsors img {
+    height: 70px;
+  }
+
+  .contact-links {
+    gap: 25px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-item i {
+    font-size: 2rem;
+  }
+}
+
+
+/* ==============================
+   CARRUSEL DE AUSPICIANTES SIMPLE
+============================== */
+.sponsors-card {
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
+  text-align: center;
+  margin-top: 40px;
+}
+
+#carouselSponsors {
+  position: relative;
+}
+
+#carouselSponsors .carousel-inner {
+  min-height: 200px;
+}
+
+#carouselSponsors .carousel-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+
+.sponsor-row img {
+  height: 100px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.sponsor-row img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .sponsor-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .sponsor-row img {
+    height: 70px;
   }
 }

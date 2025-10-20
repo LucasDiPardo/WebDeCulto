@@ -3,74 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>De Culto 94.1 - Radio en Vivo</title>
+  <title>De Culto Radio 94.1</title>
+
+  <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <link rel="icon" href="/icono.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
+
 <body>
+  <!-- NAV -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold text-danger" href="#home">DE CULTO 94.1</a>
+      <a class="navbar-brand fw-bold text-danger" href="#main">DE CULTO 94.1</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#nosotros">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#main">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header id="home" class="text-center">
-    <img src="logo.png" alt="De Culto 94.1 Logo" class="logo">
-    <h1>Radio De Culto 94.1</h1>
-    <p>Modernizamos la radio para que vuelva a ser parte de tu día: música, cultura y energía 24/7.</p>
+<!-- MAIN -->
+<section id="main" class="text-center">
+
+
+  <div class="container">
     <div class="player">
-      <audio controls autoplay>
+      <img src="/logo.webp" alt="Logo De Culto 94.1" class="main-logo">
+      <p class="lead mt-3">Modernizamos la radio para que vuelva a ser parte de tu día: música, cultura y energía 24/7.</p>
+      <audio id="player" autoplay muted controls>
         <source src="https://srv10.streamingradio.ar/8200/stream" type="audio/mpeg">
         Tu navegador no soporta audio HTML5.
       </audio>
     </div>
-  </header>
+  </div>
 
-  <section id="nosotros" class="text-center">
-    <div class="container">
-      <h2>Quiénes Somos</h2>
-      <p class="mt-4">Somos una radio joven de la ciudad, creada para acompañarte con música, cultura y actualidad. Buscamos conectar marcas con oyentes, y traer la radio al presente con una estética moderna y una programación fresca.</p>
-    </div>
-  </section>
 
-  <section id="contacto" class="text-center">
-    <div class="container">
-      <h2>Contacto</h2>
-      <p class="mt-4">Dejanos tu mensaje o consulta y te responderemos a la brevedad.</p>
-      <form class="contact-form mt-4 mx-auto" style="max-width:600px">
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Tu nombre" required>
+</section>
+
+<!--
+<section>
+  <div class="sponsors-card p-4 mt-5">
+    <h3 class="h5 text-uppercase text-danger mb-4">Auspiciantes</h3>
+
+    <div id="carouselSponsors" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-inner text-center">
+
+ 
+        <div class="carousel-item active">
+          <div class="sponsor-row">
+            <img src="img/auspiciante-1.png" alt="Sponsor 1">
+            <img src="img/auspiciante-2.png" alt="Sponsor 2">
+            <img src="img/auspiciante-3.png" alt="Sponsor 3">
+            <img src="img/auspiciante-4.png" alt="Sponsor 4">
+          </div>
         </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Tu email" required>
+
+
+        <div class="carousel-item">
+          <div class="sponsor-row">
+            <img src="img/auspiciante-5.png" alt="Sponsor 5">
+            <img src="img/auspiciante-6.png" alt="Sponsor 6">
+            <img src="img/auspiciante-7.png" alt="Sponsor 7">
+            <img src="img/auspiciante-8.png" alt="Sponsor 8">
+          </div>
         </div>
-        <div class="mb-3">
-          <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger w-100">Enviar mensaje</button>
-      </form>
-      <div class="mt-4">
-        <p>📧 <a href="mailto:radiodeculto@gmail.com" class="text-danger">radiodeculto@gmail.com</a></p>
-        <p>📱 <a href="https://wa.me/5492346408404" class="text-danger" target="_blank">WhatsApp</a></p>
-        <p>📸 <a href="https://www.instagram.com/deculto94.1" class="text-danger" target="_blank">Instagram</a></p>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+-->
 
+<!-- CONTACTO -->
+<section id="contacto" class="text-center">
+  <div class="container">
+    <h2 class="mb-4">Contacto</h2>
+    <p class="mb-5">Dejanos tu mensaje o consulta a través de los siguientes medios</p>
+
+    <div class="contact-links d-flex flex-wrap justify-content-center gap-4">
+      <a href="mailto:radiodeculto@gmail.com" class="contact-item" target="_blank">
+        <i class="bi bi-envelope-fill"></i>
+        <span>radiodeculto@gmail.com</span>
+      </a>
+
+      <a href="https://wa.me/5492346408404" class="contact-item" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <a href="https://www.instagram.com/deculto94.1" class="contact-item" target="_blank">
+        <i class="bi bi-instagram"></i>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Radio De Culto 94.1 — Todos los derechos reservados
+    © 2025 De Culto Radio 94.1 — Todos los derechos reservados
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Reproductor
+  const player = new Plyr('#player', {
+    controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+    volume: 0.6,
+    muted: true
+  });
+
+  const enableAudio = () => {
+    player.muted = false;
+    player.play();
+    document.removeEventListener('click', enableAudio);
+    document.removeEventListener('touchstart', enableAudio);
+  };
+  document.addEventListener('click', enableAudio);
+  document.addEventListener('touchstart', enableAudio);
+
+  // Carrusel de auspiciantes
+  const el = document.querySelector('#carouselSponsors');
+  if (el) {
+    new bootstrap.Carousel(el, {
+      interval: 4000,
+      ride: 'carousel',
+      pause: false,
+      wrap: true
+    });
+  }
+});
+</script>
+
+
+
 </body>
 </html>
