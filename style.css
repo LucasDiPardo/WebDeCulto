@@ -1,301 +1,80 @@
 body {
-  background-color: #000;
-  color: #bfbfbf;
+  background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+  color: #fff;
   font-family: 'Montserrat', sans-serif;
-  scroll-behavior: smooth;
-  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Carrusel */
+.carousel-inner {
+  height: 50vh;
   display: flex;
-  flex-direction: column;
-}
-
-/* ----- HEADER ----- */
-header {
-  text-align: center;
-  padding: 100px 20px 60px 20px;
-  background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
-}
-
-.logo {
-  max-width: 260px;
-  margin-bottom: 25px;
-}
-
-/* ----- TEXTOS ----- */
-h1, h2, h3, h4, h5 {
-  color: #d50000;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* ----- NAV ----- */
-nav a {
-  color: #bfbfbf !important;
-  text-transform: uppercase;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #d50000 !important;
-}
-
-/* ----- FOOTER ----- */
-footer {
-  text-align: center;
-  padding: 40px;
-  background-color: #111;
-  color: #666;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-/* ==============================
-   MAIN CENTRAL — Reproductor
-============================== */
-#main {
-  background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 90px; /* compensa navbar fixed */
-  text-align: center;
-}
-
-#main .container {
-  max-width: 900px;
-}
-
-/* PLAYER */
-.player {
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 20px;
-  padding: 50px 40px;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  width: 100%;
-}
-
-.player img {
-  width: 260px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-}
-
-.player .info p {
-  color: #ccc;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* REPRODUCTOR */
-.player audio {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  outline: none;
-}
-
-/* PLYR ESTILO */
-.plyr {
-  --plyr-color-main: #d50000;
-  width: 100%;
-  border-radius: 10px;
+  align-items: flex-start;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-.plyr__controls {
-  background: #111;
-  border-radius: 0 0 10px 10px;
-}
 
-/* ==============================
-   AUSPICIANTES (opcional estático)
-============================== */
-.sponsors {
-  margin-top: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.sponsors img {
-  height: 100px;
+.sponsor-img {
+  max-height: 65vh;
   width: auto;
-  filter: grayscale(100%);
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-
-.sponsors img:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* ==============================
-   CONTACTO MODERNO
-============================== */
-#contacto {
-  background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
-  padding: 100px 20px;
-}
-
-#contacto h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-#contacto p {
-  color: #aaa;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  color: #bfbfbf;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.contact-item i {
-  font-size: 1.8rem;
-  color: #d50000;
+  object-fit: contain;
+  border-radius: 12px;
+  margin: 0 auto;
+  background: #0f0f0f;
+  box-shadow: 0 0 25px rgba(213, 0, 0, 0.3); /* glow leve */
   transition: transform 0.3s ease;
 }
 
-.contact-item:hover {
-  color: #fff;
-  transform: translateY(-3px);
+.sponsor-img {
+  height: 350px;         /* fuerza mismo alto */
+  width: auto;
+  object-fit: contain;
 }
 
-.contact-item:hover i {
-  transform: scale(1.2);
-  color: #ff1a1a;
+.small-title {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  color: #d50000;
+  text-shadow: 0 0 10px rgba(213, 0, 0, 0.4);
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
-@media (max-width: 768px) {
-  #main {
-    padding: 120px 20px;
-  }
 
-  .player {
-    padding: 40px 25px;
-  }
 
-  .player img {
-    width: 180px;
-  }
+/* Reproductor */
+.logo-radio {
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(213, 0, 0, 0.3);
+}
 
-  .player .info p {
-    font-size: 1rem;
-  }
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  color: #999;
+  border-top: 1px solid #111;
+}
+footer a:hover {
+  color: #fff !important;
+  transform: scale(1.15);
+  transition: 0.2s ease;
+}
 
-  .player audio {
-    max-width: 100%;
-  }
-
-  .sponsors img {
-    height: 70px;
-  }
-
-  .contact-links {
-    gap: 25px;
-  }
-
-  .contact-item {
+/* Responsive */
+@media (max-width: 991px) {
+  main {
     flex-direction: column;
     text-align: center;
+    padding-top: 100px;
   }
-
-  .contact-item i {
-    font-size: 2rem;
+  .carousel-inner {
+    height: 35vh;
   }
-}
-
-
-/* ==============================
-   CARRUSEL DE AUSPICIANTES SIMPLE
-============================== */
-.sponsors-card {
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.08);
-  text-align: center;
-  margin-top: 40px;
-}
-
-#carouselSponsors {
-  position: relative;
-}
-
-#carouselSponsors .carousel-inner {
-  min-height: 200px;
-}
-
-#carouselSponsors .carousel-item {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.sponsor-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 30px;
-}
-
-.sponsor-row img {
-  height: 100px;
-  width: auto;
-  filter: grayscale(100%);
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-.sponsor-row img:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .sponsor-row {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .sponsor-row img {
-    height: 70px;
+  .sponsor-img {
+    max-height: 30vh;
   }
 }
+
+
