@@ -5,67 +5,48 @@ body {
   overflow-x: hidden;
 }
 
-/* Carrusel */
-
-.carousel-inner {
+/* === CENTRADO GENERAL === */
+main {
+  min-height: calc(100vh - 120px); /* Resta navbar + footer */
   display: flex;
   align-items: center;
-  height: auto; /* 🔹 no fuerza un alto fijo */
-  min-height: 50vh; /* altura mínima para equilibrio */
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+  justify-content: center;
 }
-.sponsor-img {
-  max-width: 90%; /* ocupa hasta el 90% del ancho disponible */
-  max-height: 70vh; /* nunca más alto que 70% del viewport */
+
+/* === CARRUSEL === */
+.carousel-inner {
   height: auto;
-  width: auto;
-  object-fit: contain; /* mantiene proporción sin recortar */
+  min-height: 50vh;
+  overflow: hidden;
+}
+
+.sponsor-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 350px;
+  height: auto;
+  object-fit: contain;
   border-radius: 12px;
   background: #0f0f0f;
   box-shadow: 0 0 25px rgba(213, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
-
-
-.sponsor-img {
-  height: 350px;         /* fuerza mismo alto */
-  width: auto;
-  object-fit: contain;
-}
-
-.small-title {
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  color: #d50000;
-  text-shadow: 0 0 10px rgba(213, 0, 0, 0.4);
-}
-
-
-
-/* Reproductor */
-.logo-radio {
-  width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(213, 0, 0, 0.3);
-}
-
-/* Footer */
+/* === FOOTER === */
 footer {
   font-size: 0.9rem;
   color: #999;
   border-top: 1px solid #111;
 }
+
 footer a:hover {
   color: #fff !important;
   transform: scale(1.15);
   transition: 0.2s ease;
 }
 
-/* Responsive */
+/* === RESPONSIVE === */
 @media (max-width: 991px) {
   main {
     flex-direction: column;
@@ -73,79 +54,45 @@ footer a:hover {
     padding-top: 100px;
   }
   .carousel-inner {
-    height: 35vh;
+    min-height: 35vh;
   }
   .sponsor-img {
-    max-height: 30vh;
+    max-height: 200px;
   }
 }
-/* 📱 Ocultar logo en pantallas menores a 992px */
-@media (max-width: 1077px) {
-  .logo-radio {
-    display: none !important;
-  }
-}
-/* 🖥️ Ajuste para pantallas grandes (TV, monitores 1080p o más) */
+
+/* Pantallas grandes */
 @media (min-width: 1600px) {
   body {
-    zoom: 0.9; /* reduce el tamaño general a 90% */
+    zoom: 0.9;
   }
-
   .carousel-inner {
-    height: 65vh;
+    min-height: 65vh;
   }
-
   .sponsor-img {
     max-height: 420px;
   }
 }
 
-
-
-/* 📱 Ajustes para móviles */
+/* Móviles */
 @media (max-width: 768px) {
-
-  /* Evita que el footer tape el reproductor */
   body {
     display: block;
     overflow-y: auto;
   }
-
   .container {
-    padding-bottom: 120px; /* espacio extra para el footer */
+    padding-bottom: 120px;
   }
-
-  /* El logo no debe ocupar tanto */
-  .logo-radio {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  /* Reproductor más visible */
   audio {
     width: 90%;
     max-width: 300px;
     height: 45px;
     margin-bottom: 20px;
   }
-
-  /* Carrusel más compacto */
   .carousel-inner {
-    height: 40vh;
+    min-height: 30vh;
   }
-
   .sponsor-img {
-    max-height: 150px;
-  }
-
-  /* Footer fijo abajo, pero sin tapar contenido */
-  #contacto {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 40px 0 20px 0;
-    background: #000;
+    max-height: 120px;
   }
 }
-
