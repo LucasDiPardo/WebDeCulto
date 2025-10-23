@@ -6,26 +6,29 @@ body {
 }
 
 /* Carrusel */
+
 .carousel-inner {
-  height: 50vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  height: auto; /* 🔹 no fuerza un alto fijo */
+  min-height: 50vh; /* altura mínima para equilibrio */
   overflow: hidden;
   padding: 0;
   margin: 0;
 }
-
-
 .sponsor-img {
-  max-height: 65vh;
+  max-width: 90%; /* ocupa hasta el 90% del ancho disponible */
+  max-height: 70vh; /* nunca más alto que 70% del viewport */
+  height: auto;
   width: auto;
-  object-fit: contain;
+  object-fit: contain; /* mantiene proporción sin recortar */
   border-radius: 12px;
-  margin: 0 auto;
   background: #0f0f0f;
-  box-shadow: 0 0 25px rgba(213, 0, 0, 0.3); /* glow leve */
+  box-shadow: 0 0 25px rgba(213, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
+
+
 
 .sponsor-img {
   height: 350px;         /* fuerza mismo alto */
@@ -76,6 +79,27 @@ footer a:hover {
     max-height: 30vh;
   }
 }
+/* 📱 Ocultar logo en pantallas menores a 992px */
+@media (max-width: 1077px) {
+  .logo-radio {
+    display: none !important;
+  }
+}
+/* 🖥️ Ajuste para pantallas grandes (TV, monitores 1080p o más) */
+@media (min-width: 1600px) {
+  body {
+    zoom: 0.9; /* reduce el tamaño general a 90% */
+  }
+
+  .carousel-inner {
+    height: 65vh;
+  }
+
+  .sponsor-img {
+    max-height: 420px;
+  }
+}
+
 
 
 /* 📱 Ajustes para móviles */
