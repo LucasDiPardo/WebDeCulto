@@ -1,9 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
+    url('/img/FONDO.png') no-repeat center center/cover;
+}
+
 
 /* === CENTRADO GENERAL === */
 main {
