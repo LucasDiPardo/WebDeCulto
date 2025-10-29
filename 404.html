@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8" />
+<title>Redirigiendo…</title>
+<script>
+  // Manda al home y pasa la URL original por query, por si tu app la usa
+  const target = '/?from=' + encodeURIComponent(location.pathname + location.search + location.hash);
+  location.replace(target);
+</script>
+<noscript>
+  <meta http-equiv="refresh" content="0; url=/" />
+</noscript>
+</html>
