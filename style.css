@@ -15,7 +15,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
-    url('/img/FondoEnBaja.png') no-repeat center center/cover;
+    url('/img/Fondo.webp') no-repeat center center/cover;
 }
 
 
@@ -28,18 +28,23 @@ main {
 }
 
 /* === CARRUSEL === */
+/* Caja de alto fijo: todas las publicidades ocupan lo mismo y la página no salta */
 .carousel-inner {
-  height: auto;
-  min-height: 50vh;
-  overflow: hidden;
+  --sponsor-h: 350px;
+  height: calc(var(--sponsor-h) + 50px);
+  padding: 25px 0; /* deja lugar a la sombra roja */
+}
+
+.carousel-item {
+  height: 100%;
 }
 
 .sponsor-img {
   display: block;
   margin: 0 auto;
+  height: 100%;
+  width: auto;
   max-width: 90%;
-  max-height: 350px;
-  height: auto;
   object-fit: contain;
   border-radius: 12px;
   background: #0f0f0f;
@@ -68,10 +73,7 @@ footer a:hover {
     padding-top: 100px;
   }
   .carousel-inner {
-    min-height: 35vh;
-  }
-  .sponsor-img {
-    max-height: 200px;
+    --sponsor-h: 260px;
   }
 }
 
@@ -81,10 +83,7 @@ footer a:hover {
     zoom: 0.9;
   }
   .carousel-inner {
-    min-height: 65vh;
-  }
-  .sponsor-img {
-    max-height: 420px;
+    --sponsor-h: 420px;
   }
 }
 
@@ -104,9 +103,6 @@ footer a:hover {
     margin-bottom: 20px;
   }
   .carousel-inner {
-    min-height: 30vh;
-  }
-  .sponsor-img {
-    max-height: 120px;
+    --sponsor-h: min(52vw, 240px);
   }
 }
